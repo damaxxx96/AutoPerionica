@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "ime": "Marko Markovic",
+    "broj_telefona": 123456789,
+    "email": "marko.markovic@example.com",
+    "posedovani_automobil": 1
+  },
+  {
+    "id": 2,
+    "ime": "Ana Anic",
+    "broj_telefona": 987654321,
+    "email": "ana.anic@example.com",
+    "posedovani_automobil": 2
+  },
+  {
+    "id": 3,
+    "ime": "Petar Petrovic",
+    "broj_telefona": 555555555,
+    "email": "petar.petrovic@example.com",
+    "posedovani_automobil": 3
+  }
+]
