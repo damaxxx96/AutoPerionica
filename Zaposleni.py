@@ -12,11 +12,11 @@ class Zaposleni:
         ime: str,
         broj_telefona: str,
         email: str,
-        ID_zaposlenog: int,
+        id: int,
         tip_zaposlenog: TipZaposlenog,
     ):
         self.ime = ime
         self.broj_telefona = broj_telefona
         self.email = email
-        self.ID_zaposlenog = ID_zaposlenog
+        self.id = id
         self.tip_zaposlenog = tip_zaposlenog

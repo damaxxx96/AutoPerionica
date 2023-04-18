@@ -1,13 +1,10 @@
-from Automobil import Automobil
-
-
 class Klijent:
     def __init__(
         self,
         ime: str,
         broj_telefona: int,
         email: str,
-        posedovani_automobil: Automobil,
+        posedovani_automobil: int,
         id: int,
     ):
         self.ime = ime

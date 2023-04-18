@@ -1,0 +1,26 @@
+[
+  {
+    "model": "FIAT",
+    "boja": "ZELENA",
+    "registracioni_broj": "BG-1234-AB",
+    "da_li_je_cist": true,
+    "id": 1,
+    "klijent": 1
+  },
+  {
+    "model": "MERCEDES",
+    "boja": "CRVENA",
+    "registracioni_broj": "NS-5678-CD",
+    "da_li_je_cist": false,
+    "id": 2,
+    "klijent": 2
+  },
+  {
+    "model": "AUDI",
+    "boja": "CRNA",
+    "registracioni_broj": "KG-9012-EF",
+    "da_li_je_cist": true,
+    "id": 3,
+    "klijent": 3
+  }
+]

@@ -4,27 +4,27 @@
     "ime": "Jovan Jovanovic",
     "broj_telefona": "555-1234",
     "email": "jovan.jovanovic@example.com",
-    "ID_zaposlenog": 1234
+    "tip_zaposlenog": "MENADZER"
   },
   {
     "id": 2,
     "ime": "Marija Maric",
     "broj_telefona": "555-5678",
     "email": "marija.maric@example.com",
-    "ID_zaposlenog": 5678
+    "tip_zaposlenog": "RADNIK"
   },
   {
     "id": 3,
     "ime": "Milos Milosevic",
     "broj_telefona": "555-9012",
     "email": "milos.milosevic@example.com",
-    "ID_zaposlenog": 9012
+    "tip_zaposlenog": "RADNIK"
   },
   {
     "id": 4,
     "ime": "Nikola Nikolic",
     "broj_telefona": "555-3456",
     "email": "nikola.nikolic@example.com",
-    "ID_zaposlenog": 3456
+    "tip_zaposlenog": "RADNIK"
   }
 ]

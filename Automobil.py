@@ -1,5 +1,4 @@
 from enum import Enum
-from Klijent import Klijent
 
 
 class ModelAutomobila(Enum):
@@ -30,7 +29,7 @@ class Automobil:
         boja: BojaAutomobila,
         registracioni_broj: str,
         da_li_je_cist: bool,
-        klijent: Klijent,
+        klijent: int,
         id: int,
     ):
         self.model = model

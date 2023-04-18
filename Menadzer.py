@@ -1,5 +1,5 @@
-from Zaposleni import Zaposleni
-from Zaposleni import TipZaposlenog
+from zaposleni import Zaposleni
+from zaposleni import TipZaposlenog
 
 
 class Menadzer(Zaposleni):
@@ -8,7 +8,7 @@ class Menadzer(Zaposleni):
         ime: str,
         broj_telefona: str,
         email: str,
-        ID_zaposlenog: int,
+        id: int,
         tip_zaposlenog: TipZaposlenog,
     ):
-        super().__init__(ime, broj_telefona, email, ID_zaposlenog, tip_zaposlenog)
+        super().__init__(ime, broj_telefona, email, id, tip_zaposlenog)
