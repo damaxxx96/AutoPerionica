@@ -1,4 +1,4 @@
-from perionicaAutomobila import PerionicaAutomobila
+from perionica_automobila import PerionicaAutomobila
 
 perionica = PerionicaAutomobila("Rade i majstori")
 
@@ -23,3 +23,6 @@ print("Uspesno ucitani automobili") if status_automobili == True else print(
 )
 
 print("Dobrodosli u perionicu: " + perionica.ime)
+
+perionica.automobili[0].info(perionica.klijenti)
+perionica.klijenti[0].info(perionica.automobili)
