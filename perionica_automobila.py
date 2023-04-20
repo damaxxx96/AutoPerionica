@@ -94,3 +94,46 @@ class PerionicaAutomobila:
 
         except:
             return False
+
+    def info_klijent(self, klijent_id: int) -> None:
+        klijent = next(filter(lambda klijent: klijent.id == klijent_id, self.klijenti))
+
+        print("Ime Klijenta: " + klijent.ime)
+        print("Broj telefona klijenta: " + klijent.broj_telefona)
+        print("Email klijenta: " + klijent.email)
+
+        automobil = next(
+            filter(
+                lambda automobil: automobil.id == klijent.posedovani_automobil,
+                self.automobili,
+            )
+        )
+
+        print(
+            "Posedovani automobil "
+            + automobil.model.name
+            + " "
+            + automobil.boja.name
+            + " "
+            + automobil.registracioni_broj
+        )
+
+    def info_automobil(self, automobil_id: int) -> None:
+        automobil = next(
+            filter(lambda automobil: automobil.id == automobil_id, self.automobili)
+        )
+
+        print("Model automobila " + automobil.model.name)
+        print("Boja automobila " + automobil.boja.name)
+        print("Registacioni broj automobila " + automobil.registracioni_broj)
+        print(
+            "Automobil je cist"
+            if automobil.da_li_je_cist == True
+            else "Automobil je prljav"
+        )
+
+        klijent = next(
+            filter(lambda klijent: klijent.id == automobil.klijent, self.klijenti)
+        )
+
+        print("Klijent " + klijent.ime)

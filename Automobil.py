@@ -38,13 +38,3 @@ class Automobil:
         self.da_li_je_cist = da_li_je_cist
         self.klijent = klijent
         self.id = id
-
-    def info(self, klijenti) -> None:
-        print("Model automobila " + self.model.name)
-        print("Boja automobila " + self.boja.name)
-        print("Registacioni broj automobila " + self.registracioni_broj)
-        print("Automobil je " + "cist" if self.da_li_je_cist == True else "prljav")
-
-        klijent = next(filter(lambda klijent: klijent.id == self.klijent, klijenti))
-
-        print("Klijent " + klijent.ime)
