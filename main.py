@@ -1,9 +1,33 @@
 import os
 import sys
+from klijent import Klijent
+from menadzer import Menadzer
 from perionica_automobila import PerionicaAutomobila
+from zaposleni import TipZaposlenog, Zaposleni
 
 
-def info_klijenti(perionica: PerionicaAutomobila):
+
+
+
+def logovanje() -> Klijent | Zaposleni | Menadzer:
+    while True:
+        uneti_email = input ("Unesite Vas email: ")
+        os.system("cls")
+        
+        lista_klijenata = list(filter(lambda klijent: uneti_email == klijent.email, perionica.klijenti))
+        
+        if len(lista_klijenata) != 0:
+            return lista_klijenata[0]
+        
+        lista_zaposlenih = list(filter(lambda zaposleni: uneti_email == zaposleni.email, perionica.zaposleni))
+        
+        if len(lista_zaposlenih) != 0:
+            return lista_zaposlenih[0]
+
+        print("Korisnik ne postoji!")
+    
+
+def info_klijenti(perionica: PerionicaAutomobila) -> None:
     while True:
         svi_klijent_id = list(map(lambda klijent: klijent.id, perionica.klijenti))
         print("-------------")
@@ -27,7 +51,7 @@ def info_klijenti(perionica: PerionicaAutomobila):
             print("Pogresan unos!")
 
 
-def info_automobili(perionica: PerionicaAutomobila):
+def info_automobili(perionica: PerionicaAutomobila) -> None:
     while True:
         svi_automobili_id = list(
             map(lambda automobil: automobil.id, perionica.automobili)
@@ -60,6 +84,27 @@ def info_automobili(perionica: PerionicaAutomobila):
         else:
             print("Pogresan unos!")
 
+def info_ulogovani_korisnik(ulogovani_korisnik) -> None:
+    if isinstance (ulogovani_korisnik,Klijent ):
+        print("|| KLIJENT ||")
+        print("-------------")
+    elif isinstance (ulogovani_korisnik,Zaposleni):
+        if ulogovani_korisnik.tip_zaposlenog == TipZaposlenog.RADNIK:
+            print("|| ZAPOSLENI ||")
+            print("---------------")
+        elif ulogovani_korisnik.tip_zaposlenog == TipZaposlenog.MENADZER:
+            print("|| MENADZER ||")
+            print("--------------")
+        else:
+            print ("GRESKA, NEPOSTOJECI TIP KORISNIKA!!!")
+    else:
+        print ("GRESKA, NEPOSTOJECI KORISNIK!!!")
+        return
+        
+    print ("Ime: " + ulogovani_korisnik.ime)
+    print ("Email: " + ulogovani_korisnik.email)
+    print ("Broj: " + ulogovani_korisnik.broj_telefona)
+       
 
 perionica = PerionicaAutomobila("Rade i majstori")
 
@@ -83,6 +128,8 @@ print("Uspesno ucitani automobili") if status_automobili == True else print(
     "Neuspesno ucitani automobili"
 )
 
+ulogovani_korisnik = logovanje()    
+    
 while True:
     print("------------------------------------------")
     print("Dobrodosli u perionicu: " + perionica.ime)
@@ -90,6 +137,7 @@ while True:
 
     print("1. Informacije o klijentima")
     print("2. Informacije o automobilima")
+    print("3. Informacije o ulogovanom korisniku")
     print("0. Kraj")
     print("-------------")
 
@@ -100,6 +148,8 @@ while True:
         info_klijenti(perionica)
     elif unos == "2":
         info_automobili(perionica)
+    elif unos == "3":
+        info_ulogovani_korisnik(ulogovani_korisnik)
     elif unos == "0":
         sys.exit()
     else:
