@@ -1,30 +1,51 @@
 [
-  {
-    "id": 1,
-    "ime": "Jovan Jovanovic",
-    "broj_telefona": "555-1234",
-    "email": "jovan.jovanovic@example.com",
-    "tip_zaposlenog": "MENADZER"
-  },
-  {
-    "id": 2,
-    "ime": "Marija Maric",
-    "broj_telefona": "555-5678",
-    "email": "marija.maric@example.com",
-    "tip_zaposlenog": "RADNIK"
-  },
-  {
-    "id": 3,
-    "ime": "Milos Milosevic",
-    "broj_telefona": "555-9012",
-    "email": "milos.milosevic@example.com",
-    "tip_zaposlenog": "RADNIK"
-  },
-  {
-    "id": 4,
-    "ime": "Nikola Nikolic",
-    "broj_telefona": "555-3456",
-    "email": "nikola.nikolic@example.com",
-    "tip_zaposlenog": "RADNIK"
-  }
+    {
+        "id": 1,
+        "ime": "Jovan Jovanovic",
+        "broj_telefona": "555-1234",
+        "email": "jovan.jovanovic@example.com",
+        "tip_zaposlenog": "MENADZER"
+    },
+    {
+        "id": 2,
+        "ime": "Marija Maric",
+        "broj_telefona": "555-5678",
+        "email": "marija.maric@example.com",
+        "tip_zaposlenog": "RADNIK"
+    },
+    {
+        "id": 3,
+        "ime": "Milos Milosevic",
+        "broj_telefona": "555-9012",
+        "email": "milos.milosevic@example.com",
+        "tip_zaposlenog": "RADNIK"
+    },
+    {
+        "id": 4,
+        "ime": "Nikola Nikolic",
+        "broj_telefona": "555-3456",
+        "email": "nikola.nikolic@example.com",
+        "tip_zaposlenog": "RADNIK"
+    },
+    {
+        "id": 5,
+        "ime": "Damjan Ilic",
+        "broj_telefona": "05255225",
+        "email": "damjan.ilic@example.com",
+        "tip_zaposlenog": "RADNIK"
+    },
+    {
+        "id": 6,
+        "ime": "Aleksa Ignjatovic",
+        "broj_telefona": "0252525",
+        "email": "aleksa.ignjatovic@example.com",
+        "tip_zaposlenog": "RADNIK"
+    },
+    {
+        "id": 7,
+        "ime": "Pera Peric",
+        "broj_telefona": "002502525",
+        "email": "pera.peric@example.com",
+        "tip_zaposlenog": "RADNIK"
+    }
 ]

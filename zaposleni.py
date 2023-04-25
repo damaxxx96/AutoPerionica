@@ -20,3 +20,14 @@ class Zaposleni:
         self.email = email
         self.id = id
         self.tip_zaposlenog = tip_zaposlenog
+
+    def zaposleni_to_dict(self) -> dict:
+        zaposleni = {
+            "id": self.id,
+            "ime": self.ime,
+            "broj_telefona": self.broj_telefona,
+            "email": self.email,
+            "tip_zaposlenog": self.tip_zaposlenog.name
+        }
+    
+        return zaposleni    

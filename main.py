@@ -27,7 +27,7 @@ def logovanje() -> Klijent | Zaposleni | Menadzer:
         print("Korisnik ne postoji!")
     
 
-def info_klijenti(perionica: PerionicaAutomobila) -> None:
+def info_klijenti(perionica: PerionicaAutomobila, ulogovani_korisnik) -> None:
     while True:
         svi_klijent_id = list(map(lambda klijent: klijent.id, perionica.klijenti))
         print("-------------")
@@ -43,7 +43,7 @@ def info_klijenti(perionica: PerionicaAutomobila) -> None:
         if unos_id_klijenta.isdigit():
             id_klijenta = int(unos_id_klijenta)
             if id_klijenta in svi_klijent_id:
-                perionica.info_klijent(id_klijenta)
+                perionica.info_klijent(id_klijenta, ulogovani_korisnik)
                 break
             else:
                 print("Klijent sa ovim ID-em ne postoji!")
@@ -51,7 +51,7 @@ def info_klijenti(perionica: PerionicaAutomobila) -> None:
             print("Pogresan unos!")
 
 
-def info_automobili(perionica: PerionicaAutomobila) -> None:
+def info_automobili(perionica: PerionicaAutomobila, ulogovani_korisnik) -> None:
     while True:
         svi_automobili_id = list(
             map(lambda automobil: automobil.id, perionica.automobili)
@@ -77,10 +77,32 @@ def info_automobili(perionica: PerionicaAutomobila) -> None:
         if unos_id_automobila.isdigit():
             id_automobila = int(unos_id_automobila)
             if id_automobila in svi_automobili_id:
-                perionica.info_automobil(id_automobila)
+                perionica.info_automobil(id_automobila, ulogovani_korisnik)
                 break
             else:
                 print("Automobil sa ovim ID-em ne postoji!")
+        else:
+            print("Pogresan unos!")
+
+def info_zaposleni (perionica: PerionicaAutomobila, ulogovani_korisnik) -> None:
+    while True:
+        svi_zaposleni_id = list(map(lambda zaposleni: zaposleni.id, perionica.zaposleni))
+        print("-------------")
+        print("Zaposleni")
+        print("-------------")
+        for zaposleni in perionica.zaposleni:
+            print(str(zaposleni.id) + " - " + zaposleni.ime)
+        print("-------------")
+        unos_id_zaposleni = input("Unesite ID zaposlenog: ")
+        os.system("cls")
+
+        if unos_id_zaposleni.isdigit():
+            id_zaposlenog = int(unos_id_zaposleni)
+            if id_zaposlenog in svi_zaposleni_id:
+                perionica.info_zaposleni(id_zaposlenog, ulogovani_korisnik)
+                break
+            else:
+                print("Zaposleni sa ovim ID-em ne postoji!")
         else:
             print("Pogresan unos!")
 
@@ -90,7 +112,7 @@ def info_ulogovani_korisnik(ulogovani_korisnik) -> None:
         print("-------------")
     elif isinstance (ulogovani_korisnik,Zaposleni):
         if ulogovani_korisnik.tip_zaposlenog == TipZaposlenog.RADNIK:
-            print("|| ZAPOSLENI ||")
+            print("|| RADNIK ||")
             print("---------------")
         elif ulogovani_korisnik.tip_zaposlenog == TipZaposlenog.MENADZER:
             print("|| MENADZER ||")
@@ -137,20 +159,28 @@ while True:
 
     print("1. Informacije o klijentima")
     print("2. Informacije o automobilima")
-    print("3. Informacije o ulogovanom korisniku")
+    print("3. Informacije o zaposlenima")
+    print("4. Informacije o ulogovanom korisniku")
     print("0. Kraj")
     print("-------------")
-
+    if ulogovani_korisnik.tip_zaposlenog == TipZaposlenog.MENADZER:
+        print("A - Zaposli novog radnika")
+        print("-------------")
+    
     unos = input("Unesite broj: ")
     os.system("cls")
 
     if unos == "1":
-        info_klijenti(perionica)
+        info_klijenti(perionica, ulogovani_korisnik)
     elif unos == "2":
-        info_automobili(perionica)
+        info_automobili(perionica, ulogovani_korisnik)
     elif unos == "3":
+        info_zaposleni(perionica, ulogovani_korisnik)
+    elif unos == "4":
         info_ulogovani_korisnik(ulogovani_korisnik)
     elif unos == "0":
         sys.exit()
+    elif unos == "A" and ulogovani_korisnik.tip_zaposlenog == TipZaposlenog.MENADZER:
+        perionica.snimi_novog_radnika(ulogovani_korisnik)
     else:
         print("Pogresan unos!")

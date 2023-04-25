@@ -1,0 +1,16 @@
+--------------------------
+Korisnik Damjan Ilic je zatrazio informacije o zaposlenima
+Datuma 2023-04-25 13:47:00.794067
+--------------------------
+--------------------------
+Korisnik Damjan Ilic je zatrazio informacije o automobilima
+Datuma 2023-04-25 13:47:07.385313
+--------------------------
+--------------------------
+Korisnik Damjan Ilic je zatrazio informacije o klijentima
+Datuma 2023-04-25 13:47:11.639090
+--------------------------
+--------------------------
+Menadzer Jovan Jovanovic je zaposlio novog radnika Pera Peric
+Datuma 2023-04-25 13:47:41.746810
+--------------------------
